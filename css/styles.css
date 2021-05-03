@@ -1,0 +1,119 @@
+:root {
+  --mobile-width: 375px;
+  --desktop-width: 1440px;
+  --dark-cyan: hsl(185, 71%, 20%);
+  --light-cyan: hsl(185, 75%, 36%);
+  --dark-white: whitesmoke;
+  --very-dark-desaturated-blue: hsl(229, 23%, 23%);
+  --dark-grayish-blue: hsl(227, 10%, 46%);
+  --grey: hsl(0, 0%, 59%);
+  --font-size: 16px;
+  --main-font: KumbhSans, sans-serif;
+}
+
+@font-face {
+  font-family: KumbhSans;
+  src: url("../assets/fonts/KumbhSans-Regular.ttf") format("truetype");
+}
+
+html {
+  background-color: var(--dark-cyan);
+  position: relative;
+  font-family: var(--main-font);
+  font-weight: 700;
+}
+
+body {
+  min-height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+main {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+html::after,
+html::before {
+  content: "";
+  position: absolute;
+  background-color: var(--light-cyan);
+  border-radius: 50%;
+  width: 750px;
+  height: 750px;
+}
+
+html::after {
+  top: -250px;
+  left: -300px;
+}
+
+html::before {
+  bottom: -350px;
+  right: -350px;
+}
+
+.card {
+  z-index: 100;
+  width: 350px;
+  height: 350px;
+  background-color: var(--dark-white);
+  border-radius: 4%;
+  overflow: hidden;
+}
+
+.card__header {
+  position: relative;
+  height: 33%;
+  background-image: url(../assets/images/pattern.svg);
+  background-repeat: no-repeat;
+}
+
+.card__image {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  border-radius: 50%;
+  border: 3px solid var(--dark-white);
+  background-color: var(--dark-white);
+}
+
+.card__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 33%;
+  padding-top: 7%;
+}
+
+.card__text {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.card__text--light {
+  color: var(--grey);
+  font-weight: 400;
+}
+
+.card__footer {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--grey);
+}
+
+.card__stats {
+  width: 100%;
+  text-align: center;
+}
+
+.card__number {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+}
